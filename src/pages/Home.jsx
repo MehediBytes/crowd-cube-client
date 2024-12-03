@@ -1,5 +1,6 @@
 import React from 'react';
 import Banner from '../components/Banner';
+import SuccessStories from '../components/SuccessStories';
 
 const Home = () => {
     return (
@@ -10,8 +11,8 @@ const Home = () => {
             </header>
 
             {/* Running campaign section  */}
-            <section>
-
+            <section className='max-w-5xl mx-auto my-10'>
+                <SuccessStories></SuccessStories>
             </section>
 
             {/* Extra section-1 */}

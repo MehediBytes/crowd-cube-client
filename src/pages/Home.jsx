@@ -1,6 +1,7 @@
 import React from 'react';
 import Banner from '../components/Banner';
 import SuccessStories from '../components/SuccessStories';
+import HowItWorks from '../components/HowItWorks';
 
 const Home = () => {
     return (
@@ -16,8 +17,8 @@ const Home = () => {
             </section>
 
             {/* Extra section-1 */}
-            <section>
-                
+            <section className='max-w-5xl mx-auto my-10'>
+                <HowItWorks></HowItWorks>
             </section>
 
             {/* Extra section-2 */}

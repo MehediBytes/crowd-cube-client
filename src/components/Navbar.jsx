@@ -31,7 +31,7 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className=''>
-                    <Link to={"/"}><h1 className='text-white text-3xl font-extrabold'>Crowd-Cube</h1></Link>
+                    <Link to={"/"}><h1 className='text-white text-xl md:text-3xl font-extrabold'>Crowd-Cube</h1></Link>
                 </div>
             </div>
             <div className="navbar-center hidden lg:flex">

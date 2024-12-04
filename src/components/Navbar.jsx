@@ -44,8 +44,8 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end flex flex-col md:flex-row justify-center items-center gap-2">
-                <button className='btn btn-outline text-white w-20'>Log-In</button>
-                <button className='btn btn-outline text-white w-20'>Register</button>
+                <Link to={"/auth/login"}><button className='btn btn-outline text-white w-20'>Log-In</button></Link>
+                <Link to={"/auth/register"}><button className='btn btn-outline text-white w-20'>Register</button></Link>
             </div>
         </div>
     );

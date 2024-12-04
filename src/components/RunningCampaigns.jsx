@@ -39,7 +39,7 @@ const RunningCampaigns = ({campaigns }) => {
                             <p className="text-gray-700 mb-2">Min Donation: ${campaign.minDonation}</p>
                             <p className="text-gray-500 mb-4">Deadline: {campaign.deadline}</p>
 
-                            <Link to={"/campaign-details"}><button className="btn bg-teal-600 text-white w-full">See more</button></Link>
+                            <Link to={`/campaign-details/${campaign._id}`}><button className="btn bg-teal-600 text-white w-full">See more</button></Link>
                         </div>
                     ))}
                 </div>

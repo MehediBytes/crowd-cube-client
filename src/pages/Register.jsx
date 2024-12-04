@@ -5,7 +5,7 @@ import { toast } from "react-toastify";
 import { FaEye, FaEyeSlash } from "react-icons/fa6";
 
 const Register = () => {
-    const { register, setUser, showPassword, setShowPassword } = useContext(AuthContext);
+    const { register, setUser, showPassword, setShowPassword, updateUserProfile } = useContext(AuthContext);
     const navigate = useNavigate();
 
     const [password, setPassword] = useState("");
@@ -30,8 +30,14 @@ const Register = () => {
             .then((result) => {
                 const user = result.user;
                 setUser(user);
-                toast.success("Registered successfully!");
-                navigate("/");
+                updateUserProfile({ displayName: name, photoURL: photo })
+                    .then(() => {
+                        toast.success("Registered successfully!");
+                        navigate("/");
+                    })
+                    .catch((err) => {
+                        toast.error(err.message || "Profile update failed!");
+                    });
             })
             .catch((error) => {
                 toast.error(
@@ -42,11 +48,11 @@ const Register = () => {
 
     return (
         <div className="flex items-center justify-center my-10">
-            <div className="p-8 bg-white rounded-lg shadow-lg w-full max-w-md border border-blue-300">
-                <h2 className="text-3xl font-bold mb-6 text-center text-blue-800 animate__animated animate__slower animate__fadeInDown">
+            <div className="p-8 bg-white rounded-lg shadow-lg w-full max-w-md border border-teal-400">
+                <h2 className="text-3xl font-bold mb-6 text-center text-teal-600">
                     Register
                 </h2>
-                <hr className="border-blue-300" />
+                <hr className="border-teal-400" />
                 <form onSubmit={handleRegister} className="space-y-6 mt-6">
                     {/* Name Field */}
                     <div>
@@ -60,7 +66,7 @@ const Register = () => {
                             type="text"
                             name="name"
                             id="name"
-                            className="input input-bordered w-full border-blue-300 focus:ring focus:ring-blue-200 rounded-lg"
+                            className="input input-bordered w-full border-teal-400 focus:ring focus:ring-blue-200 rounded-lg"
                             required
                         />
                     </div>
@@ -77,7 +83,7 @@ const Register = () => {
                             type="text"
                             name="photo"
                             id="photo"
-                            className="input input-bordered w-full border-blue-300 focus:ring focus:ring-blue-200 rounded-lg"
+                            className="input input-bordered w-full border-teal-400 focus:ring focus:ring-blue-200 rounded-lg"
                         />
                     </div>
 
@@ -93,7 +99,7 @@ const Register = () => {
                             type="email"
                             name="email"
                             id="email"
-                            className="input input-bordered w-full border-blue-300 focus:ring focus:ring-blue-200 rounded-lg"
+                            className="input input-bordered w-full border-teal-400 focus:ring focus:ring-blue-200 rounded-lg"
                             required
                         />
                     </div>
@@ -111,14 +117,14 @@ const Register = () => {
                                 type={showPassword ? "text" : "password"}
                                 name="password"
                                 id="password"
-                                className="input input-bordered w-full border-blue-300 focus:ring focus:ring-blue-200 rounded-lg"
+                                className="input input-bordered w-full border-teal-400 focus:ring focus:ring-blue-200 rounded-lg"
                                 required
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)}
                             />
                             <button
                                 type="button"
-                                className="absolute right-3 top-3 text-gray-600"
+                                className="absolute right-3 top-1/3 text-gray-600"
                                 onClick={() => setShowPassword(!showPassword)}
                             >
                                 {showPassword ? (
@@ -133,7 +139,7 @@ const Register = () => {
                     {/* Submit Button */}
                     <button
                         type="submit"
-                        className="btn btn-primary w-full bg-blue-600 text-white font-bold rounded-lg shadow-md hover:bg-blue-700 transform transition-transform"
+                        className="btn btn-primary w-full bg-teal-600 text-white font-bold rounded-lg shadow-md hover:bg-teal-800 transform transition-transform"
                     >
                         Register
                     </button>
@@ -144,7 +150,7 @@ const Register = () => {
                     Already have an account?{" "}
                     <Link
                         to="/auth/login"
-                        className="text-blue-600 font-bold hover:underline"
+                        className="text-teal-600 font-bold hover:underline"
                     >
                         Login
                     </Link>

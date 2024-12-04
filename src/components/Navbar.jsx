@@ -1,7 +1,25 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import { AuthContext } from '../provider/AuthProvider';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Navbar = () => {
+    const { user, logout } = useContext(AuthContext);
+    console.log(user);
+    const [showTooltip, setShowTooltip] = useState(false);
+
+    // Handle Logout
+    const handleLogout = () => {
+        logout()
+            .then(() => {
+                toast.success('Logged out successfully!');
+            })
+            .catch((error) => {
+                toast.error('Logout failed. Please try again!', error);
+            });
+    };
+
     return (
         <div className="navbar bg-gradient-to-r from-teal-500 to-teal-700 p-4">
             <div className="navbar-start">
@@ -30,10 +48,13 @@ const Navbar = () => {
                         <li><NavLink to={"/my-donations"}>My Donations</NavLink></li>
                     </ul>
                 </div>
-                <div className=''>
-                    <Link to={"/"}><h1 className='text-white text-xl md:text-3xl font-extrabold'>Crowd-Cube</h1></Link>
+                <div>
+                    <Link to={"/"}>
+                        <h1 className='text-white text-xl md:text-3xl font-extrabold'>Crowd-Cube</h1>
+                    </Link>
                 </div>
             </div>
+
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1 text-white">
                     <li><NavLink to={"/"}>Home</NavLink></li>
@@ -43,9 +64,46 @@ const Navbar = () => {
                     <li><NavLink to={"/my-donations"}>My Donations</NavLink></li>
                 </ul>
             </div>
-            <div className="navbar-end flex flex-col md:flex-row justify-center items-center gap-2">
-                <Link to={"/auth/login"}><button className='btn btn-outline text-white w-20'>Log-In</button></Link>
-                <Link to={"/auth/register"}><button className='btn btn-outline text-white w-20'>Register</button></Link>
+
+            <div className="navbar-end">
+                {user && user?.email ? (
+                    <div className="flex items-center gap-4 relative">
+                        {/* User Photo */}
+                        <div
+                            className="relative group"
+                            onMouseEnter={() => setShowTooltip(true)}
+                            onMouseLeave={() => setShowTooltip(false)}
+                        >
+                            <img
+                                className="w-10 h-10 rounded-full cursor-pointer"
+                                src={user?.photoURL}
+                                alt={user?.displayName || 'User'}
+                            />
+                            {/* Display Name Tooltip */}
+                            {showTooltip && (
+                                <div className="absolute top-12 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white text-sm rounded-md px-3 py-1">
+                                    {user?.displayName || 'No Name'}
+                                </div>
+                            )}
+                        </div>
+
+                        {/* Logout Button */}
+                        <button
+                            onClick={handleLogout}
+                            className="btn btn-outline text-white">
+                            Log Out
+                        </button>
+                    </div>
+                ) : (
+                    <div className='flex flex-col md:flex-row justify-center items-center gap-2'>
+                        <Link to={"/auth/login"}>
+                            <button className='btn btn-outline text-white w-20'>Log-In</button>
+                        </Link>
+                        <Link to={"/auth/register"}>
+                            <button className='btn btn-outline text-white w-20'>Register</button>
+                        </Link>
+                    </div>
+                )}
             </div>
         </div>
     );

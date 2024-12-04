@@ -4,7 +4,6 @@ import { Link, useLoaderData } from 'react-router-dom';
 const AllCampaign = () => {
 
     const campaigns = useLoaderData();
-    console.log(campaigns);
 
     const [sortedCampaigns, setSortedCampaigns] = useState(campaigns);
     const [isAscending, setIsAscending] = useState(true);

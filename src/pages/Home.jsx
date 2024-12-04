@@ -3,8 +3,13 @@ import Banner from '../components/Banner';
 import SuccessStories from '../components/SuccessStories';
 import HowItWorks from '../components/HowItWorks';
 import WhyChooseUs from '../components/WhyChooseUs';
+import RunningCampaigns from '../components/RunningCampaigns';
+import { useLoaderData } from 'react-router-dom';
 
 const Home = () => {
+
+    const campaigns  = useLoaderData();
+    console.log(campaigns);
     return (
         <div>
             {/* Banner/Slider section */}
@@ -14,7 +19,7 @@ const Home = () => {
 
             {/* Running campaign section  */}
             <section className='max-w-5xl mx-auto my-10'>
-                <h2>Running campaigns comming soon............</h2>
+                <RunningCampaigns campaigns={campaigns}></RunningCampaigns>
             </section>
 
             {/* Extra section-1 */}

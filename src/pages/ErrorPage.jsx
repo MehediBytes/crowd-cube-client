@@ -3,11 +3,12 @@ import { Link } from 'react-router-dom';
 
 const ErrorPage = () => {
     return (
-        <div className="text-center space-y-5 py-10">
-            <h1 className="text-5xl font-medium mb-10">Page not found.</h1>
-            <p className="pb-5">404 Error Page</p>
+        <div className="text-center space-y-3 py-10">
+            <h1 className="text-6xl font-bold text-red-500 mb-5">OPPS!</h1>
+            <p className="text-xl font-bold">404 - Page Not Found</p>
+            <p className="pb-3 text-md font-medium text-gray-500">The page you are looking for might have been removed <br />had its name changed or is temporarily unavailable.</p>
             <Link to='/'>
-                <button className="btn btn-primary">Home</button>
+                <button className="btn rounded-full bg-teal-600 text-white">GO TO HOMEPAGE</button>
             </Link>
         </div>
     );

@@ -42,10 +42,10 @@ const NewCampaign = () => {
     };
 
     return (
-        <div className="lg:w-3/4 mx-auto mb-10">
-            <div className="text-center p-10">
+        <div className="max-w-5xl mx-auto mb-10">
+            <div className="text-center py-5">
                 <h1 className="text-5xl font-bold">Add New Campaign</h1>
-                <p className="py-6">
+                <p className="py-3">
                     Fill out the form below to add a new campaign.
                 </p>
             </div>

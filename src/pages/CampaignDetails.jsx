@@ -46,6 +46,7 @@ const CampaignDetails = () => {
                     },
                     body: JSON.stringify(donationData),
                 });
+                console.log(donationData);
 
                 if (response.ok) {
                     toast.success('Donation successful!');
@@ -66,7 +67,7 @@ const CampaignDetails = () => {
     };
 
     return (
-        <div className="max-w-4xl mx-auto p-6">
+        <div className="max-w-3xl mx-auto p-6">
             <h2 className="text-3xl font-bold mb-6">{campaign.title}</h2>
             <img
                 src={campaign.image}
@@ -83,10 +84,10 @@ const CampaignDetails = () => {
                 <strong>Deadline:</strong> {campaign.deadline}
             </p>
             <p className="mb-6 text-gray-700">
-                <strong>Owner Name:</strong> {campaign.userName}
+                <strong>Founder Name:</strong> {campaign.userName}
             </p>
             <p className="mb-6 text-gray-700">
-                <strong>Owner Email:</strong> {campaign.userEmail}
+                <strong>Founder Email:</strong> {campaign.userEmail}
             </p>
 
             {/* Display message if deadline has passed */}

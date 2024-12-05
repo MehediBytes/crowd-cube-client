@@ -19,9 +19,9 @@ const AllCampaign = () => {
     };
 
     return (
-        <div className="max-w-5xl mx-auto p-6">
-            <h2 className="text-3xl font-bold text-center mb-8">All Campaigns</h2>
-            <hr className="border-gray-400 w-1/4 mx-auto mb-8" />
+        <div className="max-w-5xl mx-auto py-5">
+            <h2 className="text-3xl font-bold text-center mb-5">All Campaigns</h2>
+            <hr className="border-black w-1/4 mx-auto mb-3" />
 
             {/* Sort Button */}
             <div className="text-center mb-6">
@@ -43,7 +43,7 @@ const AllCampaign = () => {
                             <th className="border border-gray-300 px-4 py-2">Type</th>
                             <th className="border border-gray-300 px-4 py-2">Min Donation</th>
                             <th className="border border-gray-300 px-4 py-2">Deadline</th>
-                            <th className="border border-gray-300 px-4 py-2">Owner</th>
+                            <th className="border border-gray-300 px-4 py-2">Founder</th>
                             <th className="border border-gray-300 px-4 py-2">Action</th>
                         </tr>
                     </thead>

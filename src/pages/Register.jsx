@@ -45,12 +45,9 @@ const Register = () => {
             if (response.ok) {
                 toast.success("Registered successfully!");
                 navigate("/");
-            } else {
-                throw new Error("Failed to save user data in MongoDB.");
             }
         } catch (error) {
-            console.error("Registration error:", error.message);
-            toast.error("Registration failed. Please try again.");
+            toast.error("Registration failed. Please try again.",error);
         }
     };
 

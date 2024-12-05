@@ -11,12 +11,11 @@ const Login = () => {
     const [password, setPassword] = useState("");
 
     const navigate = useNavigate();
-
     const location = useLocation();
 
     const from = location.state?.from?.pathname || "/";
 
-    // login user in firebase only
+    // Firebase Email Login
     const handleLogin = async (e) => {
         e.preventDefault();
         try {
@@ -24,14 +23,30 @@ const Login = () => {
             toast.success("Logged in successfully!");
             navigate(from, { replace: true });
         } catch (error) {
-            toast.error("Invalid Email or Password!");
+            toast.error(
+                error.message.includes("auth/user-not-found")
+                    ? "User not found! Please register."
+                    : "Invalid Email or Password!"
+            );
         }
     };
 
-    // login user in firebase only
+    // Google Login with User Info Storage
     const handleGoogleLogin = async () => {
         try {
-            await googleLogin();
+            const result = await googleLogin();
+            const user = result.user;
+            // Save user info to MongoDB
+            await fetch("http://localhost:5000/users", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    name: user.displayName,
+                    email: user.email,
+                    photoURL: user.photoURL,
+                    role: "user", // default role
+                }),
+            });
             toast.success("Logged in with Google!");
             navigate(from, { replace: true });
         } catch (error) {
@@ -42,9 +57,7 @@ const Login = () => {
     return (
         <div className="flex items-center justify-center my-10">
             <div className="p-8 bg-white rounded-lg shadow-lg w-full max-w-md border border-teal-400">
-                <h2 className="text-3xl font-bold mb-6 text-center text-teal-600">
-                    Login
-                </h2>
+                <h2 className="text-3xl font-bold mb-6 text-center text-teal-600">Login</h2>
                 <hr className="border-teal-400" />
                 <form onSubmit={handleLogin} className="space-y-6 mt-6">
                     <div>

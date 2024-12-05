@@ -2,55 +2,77 @@ import React, { useState } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 
 const AllCampaign = () => {
-
+    // Fetch campaigns from loader data
     const campaigns = useLoaderData();
 
+    // State for sorted campaigns and sorting order
     const [sortedCampaigns, setSortedCampaigns] = useState(campaigns);
     const [isAscending, setIsAscending] = useState(true);
 
-    // Handle sorting based on minDonation
+    // Sort campaigns by minimum donation
     const handleSort = () => {
         const sorted = [...sortedCampaigns].sort((a, b) => {
-            if (isAscending) {
-                return a.minDonation - b.minDonation; // Ascending order
-            } else {
-                return b.minDonation - a.minDonation; // Descending order
-            }
+            return isAscending ? a.minDonation - b.minDonation : b.minDonation - a.minDonation;
         });
         setSortedCampaigns(sorted);
         setIsAscending(!isAscending); // Toggle sorting order
     };
 
     return (
-        <div>
-            <div className="max-w-5xl mx-auto my-10">
-                <h2 className="text-3xl font-bold text-center mb-8">All Campaigns</h2>
-                {/* Sort Button */}
-                <hr className='border-black w-1/4 mx-auto mb-10' />
+        <div className="max-w-5xl mx-auto p-6">
+            <h2 className="text-3xl font-bold text-center mb-8">All Campaigns</h2>
+            <hr className="border-gray-400 w-1/4 mx-auto mb-8" />
+
+            {/* Sort Button */}
+            <div className="text-center mb-6">
                 <button
                     onClick={handleSort}
-                    className="btn bg-teal-600 text-white mb-6"
+                    className="btn bg-teal-600 text-white px-6 py-2 rounded-md shadow-sm hover:bg-teal-700 transition"
                 >
                     Sort by {isAscending ? "(Ascending)" : "(Descending)"}
                 </button>
+            </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-                    {sortedCampaigns.map((campaign) => (
-                        <div key={campaign._id} className="card bg-white shadow-md rounded-lg p-4">
-                            <img
-                                src={campaign.image}
-                                alt={campaign.title}
-                                className="w-full h-48 object-cover rounded-lg mb-4"
-                            />
-                            <h3 className="text-xl font-semibold mb-2">{campaign.title}</h3>
-                            <p className="text-gray-500 mb-2">Campaign type: {campaign.campaignType}</p>
-                            <p className="text-gray-700 mb-2">Min Donation: ${campaign.minDonation}</p>
-                            <p className="text-gray-500 mb-4">Deadline: {campaign.deadline}</p>
-
-                            <Link to={`/campaign-details/${campaign._id}`}><button className="btn bg-teal-600 text-white w-full">See more</button></Link>
-                        </div>
-                    ))}
-                </div>
+            {/* Campaign Table */}
+            <div className="overflow-x-auto rounded-lg">
+                <table className="table-auto w-full border-collapse border border-gray-300">
+                    <thead>
+                        <tr className="bg-gray-200">
+                            <th className="border border-gray-300 px-4 py-2">Image</th>
+                            <th className="border border-gray-300 px-4 py-2">Title</th>
+                            <th className="border border-gray-300 px-4 py-2">Type</th>
+                            <th className="border border-gray-300 px-4 py-2">Min Donation</th>
+                            <th className="border border-gray-300 px-4 py-2">Deadline</th>
+                            <th className="border border-gray-300 px-4 py-2">Owner</th>
+                            <th className="border border-gray-300 px-4 py-2">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {sortedCampaigns.map((campaign) => (
+                            <tr key={campaign._id} className="hover:bg-gray-100">
+                                <td className="border border-gray-300 px-4 py-2">
+                                    <img
+                                        src={campaign.image}
+                                        alt={campaign.title}
+                                        className="w-20 h-20 object-cover rounded-lg"
+                                    />
+                                </td>
+                                <td className="border border-gray-300 px-4 py-2">{campaign.title}</td>
+                                <td className="border border-gray-300 px-4 py-2">{campaign.campaignType}</td>
+                                <td className="border border-gray-300 px-4 py-2">${campaign.minDonation}</td>
+                                <td className="border border-gray-300 px-4 py-2">{campaign.deadline}</td>
+                                <td className="border border-gray-300 px-4 py-2">{campaign.userName}</td>
+                                <td className="border border-gray-300 px-4 py-2 text-center">
+                                    <Link to={`/campaign-details/${campaign._id}`}>
+                                        <button className="btn bg-teal-600 text-white px-4 py-2 rounded-md shadow-sm hover:bg-teal-700 transition">
+                                            See More
+                                        </button>
+                                    </Link>
+                                </td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
             </div>
         </div>
     );

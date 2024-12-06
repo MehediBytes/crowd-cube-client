@@ -44,7 +44,7 @@ const UpdateCampaign = () => {
     return (
         <div className="max-w-5xl mx-auto mb-10">
             <div className="text-center py-5">
-                <h1 className="text-5xl font-bold">Update Campaign!</h1>
+                <h1 className="lg:text-4xl md:text-3xl text-2xl font-bold">Update Campaign!</h1>
                 <p className="py-3">
                     Fill out the form below to update the campaign.
                 </p>

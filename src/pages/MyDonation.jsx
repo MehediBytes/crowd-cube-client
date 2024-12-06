@@ -11,11 +11,11 @@ const MyDonation = () => {
     const userDonations = donationData.filter(donation => donation.email === user.email);
 
     return (
-        <div className="max-w-5xl mx-auto p-6">
+        <div className="max-w-5xl mx-auto py-10">
             <h2 className="text-3xl font-bold mb-6 text-center">My Donations</h2>
             <hr className='border-black w-1/3 mx-auto mb-10'/>
             {userDonations.length === 0 ? (
-                <p className="text-gray-700">You haven't donated to any campaigns yet.</p>
+                <p className="text-center">You haven't donated to any campaigns yet.</p>
             ) : (
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     {userDonations.map((donation) => (

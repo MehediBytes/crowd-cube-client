@@ -85,10 +85,10 @@ const Register = () => {
                             </button>
                         </div>
                     </div>
-                    <button type="submit" className="btn btn-primary w-full bg-teal-600 text-white rounded-lg">Register</button>
+                    <button type="submit" className="btn btn-primary w-full bg-teal-600 text-white font-bold rounded-lg shadow-md hover:bg-teal-800 transform transition-transform">Register</button>
                 </form>
                 <p className="text-sm mt-6 text-center">
-                    Already have an account? <Link to="/auth/login" className="text-teal-600 font-bold">Login</Link>
+                    Already have an account? <Link to="/auth/login" className="text-teal-600 font-bold hover:underline">Login</Link>
                 </p>
             </div>
         </div>

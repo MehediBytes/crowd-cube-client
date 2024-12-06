@@ -44,7 +44,7 @@ const Login = () => {
                     name: user.displayName,
                     email: user.email,
                     photoURL: user.photoURL,
-                    role: "user", // default role
+                    role: "user",
                 }),
             });
             toast.success("Logged in with Google!");

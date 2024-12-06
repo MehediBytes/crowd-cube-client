@@ -12,6 +12,7 @@ import LogIn from '../pages/LogIn';
 import Register from '../pages/Register';
 import CampaignDetails from '../pages/CampaignDetails';
 import PrivateRoute from './PrivateRoute';
+import UpdateCampaign from '../pages/UpdateCampaign';
 
 const router = createBrowserRouter([
     {
@@ -46,6 +47,11 @@ const router = createBrowserRouter([
             {
                 path: "/campaign-details/:id",
                 element: <PrivateRoute> <CampaignDetails></CampaignDetails> </PrivateRoute>,
+                loader: ({ params }) => fetch(`http://localhost:5000/campaigns/${params.id}`),
+            },
+            {
+                path: "/update-campaign/:id",
+                element: <PrivateRoute> <UpdateCampaign></UpdateCampaign> </PrivateRoute>,
                 loader: ({ params }) => fetch(`http://localhost:5000/campaigns/${params.id}`),
             },
         ]

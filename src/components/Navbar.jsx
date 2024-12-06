@@ -76,7 +76,7 @@ const Navbar = () => {
                         >
                             <img
                                 className="w-10 h-10 rounded-full cursor-pointer"
-                                src={user?.photoURL}
+                                src={user?.photoURL || "None"}
                                 alt={user?.displayName || 'User'}
                             />
                             {/* Display Name Tooltip */}

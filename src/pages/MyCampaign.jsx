@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../provider/AuthProvider';
 import Swal from 'sweetalert2';
 import { toast } from 'react-toastify';
@@ -74,7 +74,7 @@ const MyCampaign = () => {
                                     <td className="border border-gray-300 px-4 py-2">{campaign.campaignType}</td>
                                     <td className="border border-gray-300 px-4 py-2">{campaign.deadline}</td>
                                     <td className="border border-gray-300 px-4 py-2 space-x-2">
-                                        <button className="btn btn-info rounded-full">Update</button>
+                                        <Link to={`/update-campaign/${campaign._id}`}><button className="btn btn-info rounded-full">Update</button></Link>
                                         <button
                                             onClick={() => handleDelete(campaign._id)}
                                             className="btn btn-warning rounded-full"

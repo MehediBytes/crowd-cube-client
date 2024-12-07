@@ -3,6 +3,7 @@ import { Link, useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../provider/AuthProvider';
 import Swal from 'sweetalert2';
 import { toast } from 'react-toastify';
+import { Typewriter } from 'react-simple-typewriter';
 
 const MyCampaign = () => {
     const AllCampaigns = useLoaderData();
@@ -23,7 +24,7 @@ const MyCampaign = () => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/campaigns/${_id}`, {
+                fetch(`https://crowd-cube-server.vercel.app/campaigns/${_id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
@@ -43,11 +44,20 @@ const MyCampaign = () => {
 
     return (
         <div className="max-w-5xl mx-auto py-10">
-            <h2 className="text-3xl font-bold mb-6 text-center">My Campaigns</h2>
+            <h2 className="text-3xl font-bold text-center mb-5">
+                <Typewriter
+                    words={['My Campaigns']}
+                    loop={false}
+                    cursor
+                    cursorStyle="_"
+                    typeSpeed={70}
+                    deleteSpeed={70}
+                />
+            </h2>
             <hr className="border-black w-1/3 mx-auto mb-10" />
 
             {userCampaigns.length === 0 ? (
-                <p className='text-center'>You have not created any campaigns yet.</p>
+                <p className='text-center'>You haven't created any campaigns yet.</p>
             ) : (
                 <div className="overflow-x-auto rounded-lg">
                     <table className="w-full border-collapse">

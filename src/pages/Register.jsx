@@ -36,7 +36,7 @@ const Register = () => {
 
             // Save to MongoDB
             const newUser = { name, email, photo };
-            const response = await fetch("http://localhost:5000/users", {
+            const response = await fetch("https://crowd-cube-server.vercel.app/users", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(newUser),

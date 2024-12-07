@@ -21,7 +21,7 @@ const NewCampaign = () => {
         const newCampaign = { image, title, campaignType, description, minDonation, deadline, userEmail, userName };
 
         // send data to the server
-        fetch('http://localhost:5000/campaigns', {
+        fetch('https://crowd-cube-server.vercel.app/campaigns', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

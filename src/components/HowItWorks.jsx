@@ -2,7 +2,7 @@ import { FaHandsHelping, FaRegCreditCard, FaHandshake, FaCheckCircle } from 'rea
 
 const HowItWorks = () => {
     return (
-        <section className="bg-teal-500 text-base-100 py-10 px-5 rounded-xl">
+        <section className="bg-teal-400 text-base-100 py-10 px-5 rounded-xl">
             <div className="container mx-auto text-center">
                 <h2 className="lg:text-3xl text-xl font-bold mb-8">How It Works</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">

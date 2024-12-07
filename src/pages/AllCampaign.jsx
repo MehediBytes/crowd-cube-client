@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
+import { Typewriter } from 'react-simple-typewriter';
 
 const AllCampaign = () => {
     // Fetch campaigns from loader data
@@ -20,7 +21,16 @@ const AllCampaign = () => {
 
     return (
         <div className="max-w-5xl mx-auto py-5">
-            <h2 className="text-3xl font-bold text-center mb-5">All Campaigns</h2>
+            <h2 className="text-3xl font-bold text-center mb-5">
+                <Typewriter
+                    words={['All Campaigns']}
+                    loop={false}
+                    cursor
+                    cursorStyle="_"
+                    typeSpeed={70}
+                    deleteSpeed={70}
+                />
+            </h2>
             <hr className="border-black w-1/4 mx-auto mb-3" />
 
             {/* Sort Button */}

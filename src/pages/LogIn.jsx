@@ -37,7 +37,7 @@ const Login = () => {
             const result = await googleLogin();
             const user = result.user;
             // Save user info to MongoDB
-            await fetch("http://localhost:5000/users", {
+            await fetch("https://crowd-cube-server.vercel.app/users", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({

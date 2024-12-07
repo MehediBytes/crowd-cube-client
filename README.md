@@ -3,13 +3,13 @@
 Welcome to **Crowdcube**, your one-stop crowdfunding platform designed to connect dreamers and doers. With Crowdcube, users can raise money for projects, startups, creative ideas, or personal causes with ease while engaging a supportive community.  
 
 ### 🚀 Live Website  
-Explore the live site: [Crowdcube](https://your-live-site-url.com)  
+Explore the live site: [Crowdcube](https://crowd-cube-a10.web.app)  
 
 ---
 
 ## 🌟 Features  
 1. **Dynamic Project Pages**: Showcase project details with real-time updates powered by **React Router DOM**.  
-2. **Interactive Animations**: Add life to your platform using **React Simple Typewriter**, **React Awesome Reveal**, and engaging **Lottie Animations**.  
+2. **Interactive Animations**: Add life to your platform using **React Simple Typewriter**, **React Awesome Reveal**, and engaging **React Tooltip**.  
 3. **Modern UI Design**: Styled with **TailwindCSS** and **DaisyUI** for a sleek and responsive interface.  
 4. **Seamless Authentication**: Secure user login and signup with **Firebase Authentication**.  
 5. **Effortless Payments**: Enable safe financial contributions with a robust backend supported by **MongoDB** and **Vercel** hosting.  

@@ -5,19 +5,12 @@ import HowItWorks from '../components/HowItWorks';
 import WhyChooseUs from '../components/WhyChooseUs';
 import RunningCampaigns from '../components/RunningCampaigns';
 import { useLoaderData } from 'react-router-dom';
-import { ThemeContext } from '../provider/ThemeProvider';
 
 const Home = () => {
 
     const campaigns = useLoaderData();
-    const { theme, toggleTheme } = useContext(ThemeContext);
     return (
         <div>
-            <div className='text-right'>
-                <button className="btn btn-outline my-5 mr-5" onClick={toggleTheme}>
-                    {theme === 'light' ? '🌙 Dark Mode' : '☀️ Light Mode'}
-                </button>
-            </div>
             {/* Banner/Slider section */}
             <header className='max-w-5xl mx-auto mb-10 rounded-xl'>
                 <Banner></Banner>

@@ -39,14 +39,13 @@ const CampaignDetails = () => {
 
             try {
                 setIsLoading(true);
-                const response = await fetch('http://localhost:5000/donations', {
+                const response = await fetch('https://crowd-cube-server.vercel.app/donations', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
                     },
                     body: JSON.stringify(donationData),
                 });
-                console.log(donationData);
 
                 if (response.ok) {
                     toast.success('Donation successful!');
@@ -56,8 +55,7 @@ const CampaignDetails = () => {
                     toast.error(errorData.message || 'Failed to complete the donation.');
                 }
             } catch (error) {
-                console.error('Donation error:', error.message);
-                toast.error('Failed to complete the donation. Please try again.');
+                toast.error('Failed to complete the donation. Please try again.', error);
             } finally {
                 setIsLoading(false);
             }

@@ -2,12 +2,12 @@ import { FaLock, FaChartLine, FaUsers } from 'react-icons/fa';
 
 const WhyChooseUs = () => {
     return (
-        <section className="bg-teal-600 text-base-100 py-10 px-5 rounded-xl">
+        <section className="bg-teal-400 text-base-100 py-10 px-5 rounded-xl">
             <div className="container mx-auto text-center">
                 <h2 className="lg:text-3xl text-xl font-bold mb-8">Why Crowdcube?</h2>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
                     {/* Feature 1 */}
-                    <div className="bg-teal-700 p-6 rounded-lg shadow-lg flex justify-center items-center flex-col gap-3 transition-transform transform hover:scale-105">
+                    <div className="bg-teal-600 p-6 rounded-lg shadow-lg flex justify-center items-center flex-col gap-3 transition-transform transform hover:scale-105">
                         <div className="text-4xl text-teal-200">
                             <FaLock />
                         </div>
@@ -17,7 +17,7 @@ const WhyChooseUs = () => {
                         </div>
                     </div>
                     {/* Feature 2 */}
-                    <div className="bg-teal-700 p-6 rounded-lg shadow-lg flex justify-center items-center flex-col gap-3 transition-transform transform hover:scale-105">
+                    <div className="bg-teal-600 p-6 rounded-lg shadow-lg flex justify-center items-center flex-col gap-3 transition-transform transform hover:scale-105">
                         <div className="text-4xl text-teal-200">
                             <FaChartLine />
                         </div>
@@ -27,7 +27,7 @@ const WhyChooseUs = () => {
                         </div>
                     </div>
                     {/* Feature 3 */}
-                    <div className="bg-teal-700 p-6 rounded-lg shadow-lg flex justify-center items-center flex-col gap-3 transition-transform transform hover:scale-105">
+                    <div className="bg-teal-600 p-6 rounded-lg shadow-lg flex justify-center items-center flex-col gap-3 transition-transform transform hover:scale-105">
                         <div className="text-4xl text-teal-200">
                             <FaUsers />
                         </div>

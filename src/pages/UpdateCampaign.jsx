@@ -114,7 +114,7 @@ const UpdateCampaign = () => {
                     </div>
 
                     <div className="form-control mt-6">
-                        <button className="btn bg-teal-600 text-white">Update Campaign</button>
+                        <button className="btn bg-teal-600 hover:bg-teal-800 text-base-100">Update Campaign</button>
                     </div>
                 </form>
             </div>

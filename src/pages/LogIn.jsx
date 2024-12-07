@@ -56,7 +56,7 @@ const Login = () => {
 
     return (
         <div className="flex items-center justify-center my-10">
-            <div className="p-8 bg-white rounded-lg shadow-lg w-full max-w-md border border-teal-400">
+            <div className="p-8 card bg-base-100 rounded-lg shadow-lg w-full max-w-md border border-teal-400">
                 <h2 className="text-3xl font-bold mb-6 text-center text-teal-600">Login</h2>
                 <hr className="border-teal-400" />
                 <form onSubmit={handleLogin} className="space-y-6 mt-6">

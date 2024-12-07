@@ -19,11 +19,11 @@ const MyDonation = () => {
             ) : (
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     {userDonations.map((donation) => (
-                        <div key={donation._id} className="border p-4 rounded-lg shadow-md bg-white mb-5 space-y-2">
+                        <div key={donation._id} className="border p-4 rounded-lg shadow-md bg-base-100 mb-5 space-y-2 transition-transform transform hover:scale-105">
                             <h3 className="text-2xl font-bold text-teal-600">{donation.title}</h3>
-                            <p className="text-gray-700"><strong>Amount Donated:</strong> ${donation.amount}</p>
-                            <p className="text-gray-700"><strong>Founder Name:</strong> {donation.userName}</p>
-                            <p className="text-gray-700"><strong>Founder Email:</strong> {donation.email}</p>
+                            <p className="text-gray-400"><strong>Amount Donated:</strong> ${donation.amount}</p>
+                            <p className="text-gray-400"><strong>Founder Name:</strong> {donation.userName}</p>
+                            <p className="text-gray-400"><strong>Founder Email:</strong> {donation.email}</p>
                         </div>
                     ))}
                 </div>

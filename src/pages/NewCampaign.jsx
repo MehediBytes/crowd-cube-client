@@ -19,7 +19,6 @@ const NewCampaign = () => {
         const userName = user?.displayName;
 
         const newCampaign = { image, title, campaignType, description, minDonation, deadline, userEmail, userName };
-        console.log(newCampaign);
 
         // send data to the server
         fetch('http://localhost:5000/campaigns', {
@@ -114,7 +113,7 @@ const NewCampaign = () => {
                     </div>
 
                     <div className="form-control mt-6">
-                        <button className="btn bg-teal-600 text-white">Add Campaign</button>
+                        <button className="btn bg-teal-600 hover:bg-teal-800 text-base-100">Add Campaign</button>
                     </div>
                 </form>
             </div>

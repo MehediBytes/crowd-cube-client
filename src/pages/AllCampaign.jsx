@@ -27,7 +27,7 @@ const AllCampaign = () => {
             <div className="text-center mb-6">
                 <button
                     onClick={handleSort}
-                    className="btn bg-teal-600 text-white px-6 py-2 rounded-md shadow-sm hover:bg-teal-700 transition"
+                    className="btn bg-teal-600 text-base-100 px-6 py-2 rounded-md shadow-sm hover:bg-teal-700 transition"
                 >
                     Sort by {isAscending ? "(Ascending)" : "(Descending)"}
                 </button>
@@ -49,7 +49,7 @@ const AllCampaign = () => {
                     </thead>
                     <tbody>
                         {sortedCampaigns.map((campaign) => (
-                            <tr key={campaign._id} className="hover:bg-gray-100">
+                            <tr key={campaign._id} className="hover:bg-base-100">
                                 <td className="border border-gray-300 px-4 py-2">
                                     <img
                                         src={campaign.image}
@@ -64,7 +64,7 @@ const AllCampaign = () => {
                                 <td className="border border-gray-300 px-4 py-2">{campaign.userName}</td>
                                 <td className="border border-gray-300 px-4 py-2 text-center">
                                     <Link to={`/campaign-details/${campaign._id}`}>
-                                        <button className="btn bg-teal-600 text-white px-4 py-2 rounded-md shadow-sm hover:bg-teal-700 transition">
+                                        <button className="btn bg-teal-600 text-base-100 px-4 py-2 rounded-md shadow-sm hover:bg-teal-700 transition">
                                             See More
                                         </button>
                                     </Link>

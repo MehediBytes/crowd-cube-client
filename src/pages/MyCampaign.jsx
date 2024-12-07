@@ -62,7 +62,7 @@ const MyCampaign = () => {
                         </thead>
                         <tbody>
                             {userCampaigns.map((campaign) => (
-                                <tr key={campaign._id}>
+                                <tr key={campaign._id} className='hover:bg-base-100'>
                                     <td className="border border-gray-300 px-4 py-2">{campaign.title}</td>
                                     <td className="border border-gray-300 px-4 py-2">
                                         <img
@@ -73,11 +73,11 @@ const MyCampaign = () => {
                                     </td>
                                     <td className="border border-gray-300 px-4 py-2">{campaign.campaignType}</td>
                                     <td className="border border-gray-300 px-4 py-2">{campaign.deadline}</td>
-                                    <td className="border border-gray-300 px-4 py-2 space-x-2">
-                                        <Link to={`/update-campaign/${campaign._id}`}><button className="btn btn-info rounded-full">Update</button></Link>
+                                    <td className="border border-gray-300 px-4 py-2 space-x-5">
+                                        <Link to={`/update-campaign/${campaign._id}`}><button className="btn btn-info text-base-100 rounded-full">Update</button></Link>
                                         <button
                                             onClick={() => handleDelete(campaign._id)}
-                                            className="btn btn-warning rounded-full"
+                                            className="btn btn-error text-base-100 rounded-full"
                                         >
                                             Delete
                                         </button>

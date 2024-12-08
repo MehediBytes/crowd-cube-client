@@ -4,6 +4,7 @@ import { AuthContext } from '../provider/AuthProvider';
 import Swal from 'sweetalert2';
 import { toast } from 'react-toastify';
 import { Typewriter } from 'react-simple-typewriter';
+import { Helmet } from 'react-helmet-async';
 
 const MyCampaign = () => {
     const AllCampaigns = useLoaderData();
@@ -44,6 +45,9 @@ const MyCampaign = () => {
 
     return (
         <div className="max-w-5xl mx-auto py-10">
+            <Helmet>
+                <title>My-Campaigns | Crowd-Cube</title>
+            </Helmet>
             <h2 className="text-3xl font-bold text-center mb-5">
                 <Typewriter
                     words={['My Campaigns']}

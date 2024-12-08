@@ -13,7 +13,7 @@ Explore the live site: [Crowdcube](https://crowd-cube-a10.web.app)
 3. **Modern UI Design**: Styled with **TailwindCSS** and **DaisyUI** for a sleek and responsive interface.  
 4. **Seamless Authentication**: Secure user login and signup with **Firebase Authentication**.  
 5. **Effortless Payments**: Enable safe financial contributions with a robust backend supported by **MongoDB** and **Vercel** hosting.  
-6. **Enhanced User Experience**: Real-time notifications using **React Toastify**, beautiful alerts with **React SweetAlert2**, and contextual tooltips via **React Tooltip**.  
+6. **Enhanced User Experience**: Real-time notifications using **React Toastify**, beautiful alerts with **React SweetAlert2**, contextual tooltips via **React Tooltip** and silder using **React Slider**. 
 7. **Community Building**: Help users connect with contributors and track their funding journey.  
 
 ---
@@ -28,6 +28,8 @@ Explore the live site: [Crowdcube](https://crowd-cube-a10.web.app)
 - **React SweetAlert2**: Beautiful and interactive alerts.  
 - **React Tooltip**: Tooltip integration for enhanced interactivity.  
 - **React Simple Typewriter**: Add typing animations to your content.  
+- **React Slider**: A beautiful functional slider for banner.  
+- **React Helmet**: Using for dynamic title.  
 - **React Awesome Reveal**: Animations to make components stand out.  
 - **Firebase**: For secure user authentication.
 - **Firebase Hosting**: Delivering blazing-fast website performance.

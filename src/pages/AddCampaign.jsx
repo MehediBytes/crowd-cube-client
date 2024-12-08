@@ -1,8 +1,9 @@
 import React, { useContext } from 'react';
 import { toast } from 'react-toastify';
 import { AuthContext } from '../provider/AuthProvider';
+import { Helmet } from 'react-helmet-async';
 
-const NewCampaign = () => {
+const AddCampaign = () => {
 
     const { user } = useContext(AuthContext);
 
@@ -42,6 +43,9 @@ const NewCampaign = () => {
 
     return (
         <div className="max-w-5xl mx-auto mb-10">
+            <Helmet>
+                <title>Add-Campaign | Crowd-Cube</title>
+            </Helmet>
             <div className="text-center py-5">
                 <h1 className="lg:text-4xl md:text-3xl text-2xl font-bold">Add New Campaign</h1>
                 <p className="py-3">
@@ -121,4 +125,4 @@ const NewCampaign = () => {
     );
 };
 
-export default NewCampaign;
+export default AddCampaign;

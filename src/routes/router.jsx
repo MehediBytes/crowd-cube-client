@@ -4,7 +4,7 @@ import HomeLayout from '../layouts/HomeLayout';
 import Home from '../pages/Home';
 import ErrorPage from '../pages/ErrorPage';
 import AllCampaign from '../pages/AllCampaign';
-import NewCampaign from '../pages/NewCampaign';
+import NewCampaign from '../pages/AddCampaign';
 import MyCampaign from '../pages/MyCampaign';
 import MyDonation from '../pages/MyDonation';
 import AuthLayout from '../layouts/AuthLayout';
@@ -31,7 +31,7 @@ const router = createBrowserRouter([
                 loader: ()=> fetch('https://crowd-cube-server.vercel.app/campaigns'),
             },
             {
-                path: "/new-campaign",
+                path: "/add-campaign",
                 element: <PrivateRoute> <NewCampaign></NewCampaign> </PrivateRoute>,
             },
             {

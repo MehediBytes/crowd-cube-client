@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
 import { toast } from "react-toastify";
 import { FaEye, FaEyeSlash } from "react-icons/fa6";
+import { Helmet } from "react-helmet-async";
 
 const Register = () => {
     const { register, setUser, showPassword, setShowPassword, updateUserProfile } = useContext(AuthContext);
@@ -53,6 +54,9 @@ const Register = () => {
 
     return (
         <div className="flex items-center justify-center my-10">
+            <Helmet>
+                <title>Register | Crowd-Cube</title>
+            </Helmet>
             <div className="p-8 card bg-base-100 rounded-lg shadow-lg w-full max-w-md border border-teal-400">
                 <h2 className="text-3xl font-bold mb-6 text-center text-teal-600">Register</h2>
                 <hr className="border-teal-400" />

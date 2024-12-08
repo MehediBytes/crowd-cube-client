@@ -3,6 +3,7 @@ import { Link, useNavigate, useLocation } from "react-router-dom";
 import { toast } from "react-toastify";
 import { AuthContext } from "../provider/AuthProvider";
 import { FaGoogle, FaEye, FaEyeSlash } from "react-icons/fa6";
+import { Helmet } from "react-helmet-async";
 
 const Login = () => {
     const { login, googleLogin, showPassword, setShowPassword } = useContext(AuthContext);
@@ -36,6 +37,7 @@ const Login = () => {
         try {
             const result = await googleLogin();
             const user = result.user;
+
             // Save user info to MongoDB
             await fetch("https://crowd-cube-server.vercel.app/users", {
                 method: "POST",
@@ -47,6 +49,8 @@ const Login = () => {
                     role: "user",
                 }),
             });
+
+            // Show toast and delay navigation
             toast.success("Logged in with Google!");
             navigate(from, { replace: true });
         } catch (error) {
@@ -56,6 +60,9 @@ const Login = () => {
 
     return (
         <div className="flex items-center justify-center my-10">
+            <Helmet>
+                <title>Login | Crowd-Cube</title>
+            </Helmet>
             <div className="p-8 card bg-base-100 rounded-lg shadow-lg w-full max-w-md border border-teal-400">
                 <h2 className="text-3xl font-bold mb-6 text-center text-teal-600">Login</h2>
                 <hr className="border-teal-400" />

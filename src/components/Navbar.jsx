@@ -54,7 +54,7 @@ const Navbar = () => {
                 <NavLink to={"/all-campaigns"}>All Campaigns</NavLink>
               </li>
               <li>
-                <NavLink to={"/new-campaign"}>Add New Campaign</NavLink>
+                <NavLink to={"/add-campaign"}>Add New Campaign</NavLink>
               </li>
               <li>
                 <NavLink to={"/my-campaign"}>My Campaign</NavLink>
@@ -86,7 +86,7 @@ const Navbar = () => {
               <NavLink to={"/all-campaigns"}>All Campaigns</NavLink>
             </li>
             <li>
-              <NavLink to={"/new-campaign"}>Add New Campaign</NavLink>
+              <NavLink to={"/add-campaign"}>Add New Campaign</NavLink>
             </li>
             <li>
               <NavLink to={"/my-campaign"}>My Campaign</NavLink>

@@ -2,11 +2,12 @@ import React, { useContext } from 'react';
 import { AuthContext } from '../provider/AuthProvider';
 import { useLoaderData } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import { Helmet } from 'react-helmet-async';
 
 const UpdateCampaign = () => {
     const { user } = useContext(AuthContext);
     const campaigns = useLoaderData();
-    const { _id, image, title, campaignType, description, minDonation, deadline, userEmail, userName } = campaigns;
+    const { _id, image, title, campaignType, description, minDonation, deadline } = campaigns;
 
     const handleUpdateCampaign = e => {
         e.preventDefault();
@@ -43,6 +44,9 @@ const UpdateCampaign = () => {
 
     return (
         <div className="max-w-5xl mx-auto mb-10">
+            <Helmet>
+                <title>Update-Campaign | Crowd-Cube</title>
+            </Helmet>
             <div className="text-center py-5">
                 <h1 className="lg:text-4xl md:text-3xl text-2xl font-bold">Update Campaign!</h1>
                 <p className="py-3">

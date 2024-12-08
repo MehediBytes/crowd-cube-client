@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { Link, useLoaderData } from 'react-router-dom';
 import { Typewriter } from 'react-simple-typewriter';
 
@@ -16,11 +17,14 @@ const AllCampaign = () => {
             return isAscending ? a.minDonation - b.minDonation : b.minDonation - a.minDonation;
         });
         setSortedCampaigns(sorted);
-        setIsAscending(!isAscending); // Toggle sorting order
+        setIsAscending(!isAscending); 
     };
 
     return (
         <div className="max-w-5xl mx-auto py-5">
+            <Helmet>
+                <title>All-Campaigns | Crowd-Cube</title>
+            </Helmet>
             <h2 className="text-3xl font-bold text-center mb-5">
                 <Typewriter
                     words={['All Campaigns']}

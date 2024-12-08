@@ -5,12 +5,16 @@ import HowItWorks from '../components/HowItWorks';
 import WhyChooseUs from '../components/WhyChooseUs';
 import RunningCampaigns from '../components/RunningCampaigns';
 import { useLoaderData } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 
 const Home = () => {
 
     const campaigns = useLoaderData();
     return (
         <div>
+            <Helmet>
+                <title>Crowd-Cube</title>
+            </Helmet>
             {/* Banner/Slider section */}
             <header className='max-w-5xl mx-auto mb-10 rounded-xl'>
                 <Banner></Banner>

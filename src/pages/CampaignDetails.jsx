@@ -2,6 +2,7 @@ import React, { useContext, useState, useEffect } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../provider/AuthProvider';
 import { toast } from 'react-toastify';
+import { Helmet } from 'react-helmet-async';
 
 const CampaignDetails = () => {
     const campaign = useLoaderData(); 
@@ -66,12 +67,18 @@ const CampaignDetails = () => {
 
     return (
         <div className="max-w-3xl mx-auto p-6">
+            <Helmet>
+                <title>Campaigns-Details | Crowd-Cube</title>
+            </Helmet>
             <h2 className="text-3xl font-bold mb-6">{campaign.title}</h2>
             <img
                 src={campaign.image}
                 alt={campaign.title}
                 className="w-full h-full object-cover rounded-lg mb-6"
             />
+            <p className="mb-4 text-gray-700">
+                <strong>Description:</strong> {campaign.description}
+            </p>
             <p className="mb-4 text-gray-700">
                 <strong>Type:</strong> {campaign.campaignType}
             </p>

@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { AuthContext } from '../provider/AuthProvider';
 import { useLoaderData } from 'react-router-dom';
 import { Typewriter } from 'react-simple-typewriter';
+import { Helmet } from 'react-helmet-async';
 
 const MyDonation = () => {
     const { user } = useContext(AuthContext);
@@ -10,10 +11,12 @@ const MyDonation = () => {
 
     // Filter donations to only show those made by the current user
     const userDonations = donationData.filter(donation => donation.email === user.email);
-    console.log(userDonations);
 
     return (
         <div className="max-w-5xl mx-auto py-10">
+            <Helmet>
+                <title>My-Donations | Crowd-Cube</title>
+            </Helmet>
             <h2 className="text-3xl font-bold text-center mb-5">
                 <Typewriter
                     words={['My Donations']}

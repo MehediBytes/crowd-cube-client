@@ -3,7 +3,6 @@ import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
 import { toast } from "react-toastify";
 import { Fade, Slide } from "react-awesome-reveal";
-import "react-toastify/dist/ReactToastify.css";
 import { ThemeContext } from "../provider/ThemeProvider";
 
 const Navbar = () => {

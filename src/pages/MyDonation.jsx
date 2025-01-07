@@ -31,9 +31,9 @@ const MyDonation = () => {
             {userDonations.length === 0 ? (
                 <p className="text-center">You haven't donated to any campaigns yet.</p>
             ) : (
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
                     {userDonations.map((donation) => (
-                        <div key={donation._id} className="border p-5 space-y-3 rounded-lg shadow-xl bg-base-100 mb-5 transition-transform transform hover:scale-105">
+                        <div key={donation._id} className="border p-5 flex flex-col flex-grow justify-between gap-2 rounded-lg shadow-xl bg-base-100 transition-transform transform hover:scale-105">
                             <h3 className="text-2xl font-bold text-teal-600">{donation.title}</h3>
                             <h3><strong>Founder Name: </strong> {donation.OwnerName || "N/A"}</h3>
                             <h3><strong>Founder Email: </strong> 

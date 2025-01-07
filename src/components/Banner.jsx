@@ -43,12 +43,12 @@ const Banner = () => {
     ];
 
     return (
-        <div className="w-full h-96">
+        <div className="w-full pt-28 px-5">
             <Slider {...settings}>
                 {banners.map((banner, index) => (
                     <div key={index} className="relative">
-                        <img src={banner.img} alt={banner.title} className="w-full h-96 object-cover rounded-xl" />
-                        <div className="absolute bottom-0 left-0 w-full bg-black bg-opacity-50 text-white p-4">
+                        <img src={banner.img} alt={banner.title} className="w-full h-96 object-cover" />
+                        <div className="absolute bottom-0 left-0 w-full bg-black bg-opacity-40 text-white p-4">
                             <h3 className="text-lg font-bold">{banner.title}</h3>
                             <p className="text-sm">{banner.description}</p>
                         </div>

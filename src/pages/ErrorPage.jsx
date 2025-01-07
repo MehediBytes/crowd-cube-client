@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const ErrorPage = () => {
     return (
-        <div className="text-center space-y-3 py-10">
+        <div className="flex justify-center items-center flex-col min-h-screen space-y-3 py-10">
             <Helmet>
                 <title>Error-Page | Crowd-Cube</title>
             </Helmet>

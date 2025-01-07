@@ -5,6 +5,8 @@ import Swal from 'sweetalert2';
 import { toast } from 'react-toastify';
 import { Typewriter } from 'react-simple-typewriter';
 import { Helmet } from 'react-helmet-async';
+import { MdDeleteForever } from 'react-icons/md';
+import { GrUpdate } from 'react-icons/gr';
 
 const MyCampaign = () => {
     const AllCampaigns = useLoaderData();
@@ -44,7 +46,7 @@ const MyCampaign = () => {
     };
 
     return (
-        <div className="max-w-5xl mx-auto py-10">
+        <div className="max-w-6xl mx-auto pt-28 pb-8 px-5 min-h-screen">
             <Helmet>
                 <title>My-Campaigns | Crowd-Cube</title>
             </Helmet>
@@ -87,14 +89,20 @@ const MyCampaign = () => {
                                     </td>
                                     <td className="border border-gray-300 px-4 py-2">{campaign.campaignType}</td>
                                     <td className="border border-gray-300 px-4 py-2">{campaign.deadline}</td>
-                                    <td className="border border-gray-300 px-4 py-2 space-x-5">
-                                        <Link to={`/update-campaign/${campaign._id}`}><button className="btn btn-info text-base-100 rounded-full">Update</button></Link>
-                                        <button
-                                            onClick={() => handleDelete(campaign._id)}
-                                            className="btn btn-error text-base-100 rounded-full"
-                                        >
-                                            Delete
-                                        </button>
+                                    <td className="border border-gray-300 px-4 py-6 gap-2 flex items-center justify-center">
+                                        <div>
+                                            <Link to={`/update-campaign/${campaign._id}`}>
+                                                <button className="btn btn-info text-base-100 rounded-full border-none"><GrUpdate /></button>
+                                            </Link>
+                                        </div>
+                                        <div>
+                                            <button
+                                                onClick={() => handleDelete(campaign._id)}
+                                                className="btn btn-error text-base-100 rounded-full border-none"
+                                            >
+                                                <MdDeleteForever className='text-lg' />
+                                            </button>
+                                        </div>
                                     </td>
                                 </tr>
                             ))}

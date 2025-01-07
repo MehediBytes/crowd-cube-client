@@ -46,7 +46,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "/campaign-details/:id",
-                element: <PrivateRoute> <CampaignDetails></CampaignDetails> </PrivateRoute>,
+                element: <CampaignDetails></CampaignDetails>,
                 loader: ({ params }) => fetch(`https://crowd-cube-server.vercel.app/campaigns/${params.id}`),
             },
             {

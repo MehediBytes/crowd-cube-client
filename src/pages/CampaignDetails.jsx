@@ -1,12 +1,14 @@
 import React, { useContext, useState, useEffect } from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, Navigate, useLoaderData, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../provider/AuthProvider';
 import { toast } from 'react-toastify';
 import { Helmet } from 'react-helmet-async';
 
 const CampaignDetails = () => {
-    const campaign = useLoaderData(); 
+    const campaign = useLoaderData();
+    console.log(campaign);
     const { user } = useContext(AuthContext);
+    const navigate = useNavigate();
     const [donationAmount, setDonationAmount] = useState('');
     const [isLoading, setIsLoading] = useState(false);
     const [isDeadlinePassed, setIsDeadlinePassed] = useState(false);
@@ -28,6 +30,11 @@ const CampaignDetails = () => {
             return;
         }
 
+        if(!user?.email){
+            toast.error("Please Log in first!")
+            navigate("/auth/login")
+        }
+
         // This is the check to allow donation if it's greater than or equal to the minimum donation
         if (parsedAmount >= campaign.minDonation) {
             const donationData = {
@@ -36,6 +43,8 @@ const CampaignDetails = () => {
                 userName: user.displayName,
                 email: user.email,
                 amount: parsedAmount,
+                OwnerName: campaign.userName,
+                OwnerMail: campaign.userEmail,
             };
 
             try {
@@ -66,67 +75,74 @@ const CampaignDetails = () => {
     };
 
     return (
-        <div className="max-w-3xl mx-auto p-6">
+        <div className="max-w-6xl mx-auto pt-28 pb-8 px-5 min-h-screen">
             <Helmet>
                 <title>Campaign-Details | Crowd-Cube</title>
             </Helmet>
-            <h2 className="text-3xl font-bold mb-6">{campaign.title}</h2>
-            <img
-                src={campaign.image}
-                alt={campaign.title}
-                className="w-full h-full object-cover rounded-lg mb-6"
-            />
-            <p className="mb-4 text-gray-700">
-                <strong>Description:</strong> {campaign.description}
-            </p>
-            <p className="mb-4 text-gray-700">
-                <strong>Type:</strong> {campaign.campaignType}
-            </p>
-            <p className="mb-4 text-gray-700">
-                <strong>Minimum Donation:</strong> ${campaign.minDonation}
-            </p>
-            <p className="mb-4 text-gray-700">
-                <strong>Deadline:</strong> {campaign.deadline}
-            </p>
-            <p className="mb-6 text-gray-700">
-                <strong>Founder Name:</strong> {campaign.userName}
-            </p>
-            <p className="mb-6 text-gray-700">
-                <strong>Founder Email:</strong> {campaign.userEmail}
-            </p>
-
-            {/* Display message if deadline has passed */}
-            {isDeadlinePassed && (
-                <div className="bg-red-200 p-4 mb-6 rounded-md text-red-600">
-                    <strong>The deadline for this campaign has passed. Donations are no longer accepted.</strong>
-                </div>
-            )}
-
-            {/* Donation Input */}
-            {!isDeadlinePassed && (
-                <div className="mb-6">
-                    <label htmlFor="donationAmount" className="block mb-2 text-gray-700">
-                        Enter Donation Amount:
-                    </label>
-                    <input
-                        type="number"
-                        id="donationAmount"
-                        value={donationAmount}
-                        onChange={(e) => setDonationAmount(e.target.value)}
-                        className="border border-gray-300 rounded-md px-4 py-2"
-                        placeholder={`Minimum $${campaign.minDonation}`}
+            <h2 className="text-3xl font-bold mb-5 md:text-center">{campaign.title}</h2>
+            <div className='md:flex md:justify-between md:gap-5 md:flex-grow'>
+                <div className='md:w-1/2'>
+                    <img
+                        src={campaign.image}
+                        alt={campaign.title}
+                        className="w-full md:h-full h-96 object-cover rounded-lg mb-6"
                     />
-                </div>
-            )}
 
-            {/* Donate Button */}
-            <button
-                onClick={handleDonate}
-                className="btn bg-teal-600 text-white px-6 py-2 rounded-md shadow-sm hover:bg-teal-700 transition"
-                disabled={isLoading || isDeadlinePassed}
-            >
-                {isLoading ? 'Processing...' : isDeadlinePassed ? 'Deadline Passed' : 'Donate Now'}
-            </button>
+                </div>
+                <div className='md:w-1/2 space-y-2 md:flex md:flex-col md:justify-between md:flex-grow'>
+                    <p>
+                        <strong>Description:</strong> {campaign.description}
+                    </p>
+                    <p>
+                        <strong>Type:</strong> {campaign.campaignType}
+                    </p>
+                    <p>
+                        <strong>Minimum Donation:</strong> ${campaign.minDonation}
+                    </p>
+                    <p>
+                        <strong>Deadline:</strong> {campaign.deadline}
+                    </p>
+                    <p>
+                        <strong>Founder Name:</strong> {campaign.userName}
+                    </p>
+                    <p>
+                        <strong>Founder Email:</strong> {campaign.userEmail}
+                    </p>
+
+                    {/* Display message if deadline has passed */}
+                    {isDeadlinePassed && (
+                        <div className="bg-red-200 p-4 mb-6 rounded-md text-red-600">
+                            <strong>The deadline for this campaign has passed. Donations are no longer accepted.</strong>
+                        </div>
+                    )}
+
+                    {/* Donation Input */}
+                    {!isDeadlinePassed && (
+                        <div className="flex gap-3 items-center">
+                            <label htmlFor="donationAmount" className="block mb-2 text-gray-700">
+                                <strong>Enter Donation Amount:</strong>
+                            </label>
+                            <input
+                                type="number"
+                                id="donationAmount"
+                                value={donationAmount}
+                                onChange={(e) => setDonationAmount(e.target.value)}
+                                className="border border-gray-300 rounded-md px-4 py-2"
+                                placeholder={`Minimum $${campaign.minDonation}`}
+                            />
+                        </div>
+                    )}
+
+                    {/* Donate Button */}
+                    <button
+                        onClick={handleDonate}
+                        className="btn bg-teal-600 text-white px-6 py-2 rounded-md shadow-sm hover:bg-teal-700 transition"
+                        disabled={isLoading || isDeadlinePassed}
+                    >
+                        {isLoading ? 'Processing...' : isDeadlinePassed ? 'Deadline Passed' : 'Donate Now'}
+                    </button>
+                </div>
+            </div>
         </div>
     );
 };

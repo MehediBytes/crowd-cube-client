@@ -2,12 +2,13 @@ import { FaHandsHelping, FaRegCreditCard, FaHandshake, FaCheckCircle } from 'rea
 
 const HowItWorks = () => {
     return (
-        <section className="bg-teal-400 text-base-100 py-10 px-5 rounded-xl">
-            <div className="container mx-auto text-center">
-                <h2 className="lg:text-3xl text-xl font-bold mb-8">How It Works</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+        <section className="mb-8 p-5 rounded-xl">
+            <div className="text-center">
+                <h2 className="lg:text-3xl text-xl font-bold mb-5">How It Works</h2>
+                <hr className="border-black w-1/3 mx-auto mb-5" />
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                     {/* Step 1 */}
-                    <div className="bg-base-100 p-6 rounded-lg shadow-lg flex justify-center items-center flex-col gap-3 transition-transform transform hover:scale-105">
+                    <div className="bg-base-100 p-6 rounded-lg shadow-lg flex justify-between flex-grow items-center flex-col gap-3 transition-transform transform hover:scale-105">
                         <div className="text-4xl text-teal-600 mb-4">
                             <FaHandsHelping />
                         </div>
@@ -17,7 +18,7 @@ const HowItWorks = () => {
                         </div>
                     </div>
                     {/* Step 2 */}
-                    <div className="bg-base-100 p-6 rounded-lg shadow-lg flex justify-center items-center flex-col gap-3 transition-transform transform hover:scale-105">
+                    <div className="bg-base-100 p-6 rounded-lg shadow-lg flex justify-between flex-grow items-center flex-col gap-3 transition-transform transform hover:scale-105">
                         <div className="text-4xl text-teal-600 mb-4">
                             <FaRegCreditCard />
                         </div>
@@ -27,7 +28,7 @@ const HowItWorks = () => {
                         </div>
                     </div>
                     {/* Step 3 */}
-                    <div className="bg-base-100 p-6 rounded-lg shadow-lg flex justify-center items-center flex-col gap-3 transition-transform transform hover:scale-105">
+                    <div className="bg-base-100 p-6 rounded-lg shadow-lg flex justify-between flex-grow items-center flex-col gap-3 transition-transform transform hover:scale-105">
                         <div className="text-4xl text-teal-600 mb-4">
                             <FaHandshake />
                         </div>
@@ -37,7 +38,7 @@ const HowItWorks = () => {
                         </div>
                     </div>
                     {/* Step 4 */}
-                    <div className="bg-base-100 p-6 rounded-lg shadow-lg flex justify-center items-center flex-col gap-3 transition-transform transform hover:scale-105">
+                    <div className="bg-base-100 p-6 rounded-lg shadow-lg flex justify-between flex-grow items-center flex-col gap-3 transition-transform transform hover:scale-105">
                         <div className="text-4xl text-teal-600 mb-4">
                             <FaCheckCircle />
                         </div>

@@ -17,11 +17,11 @@ const AllCampaign = () => {
             return isAscending ? a.minDonation - b.minDonation : b.minDonation - a.minDonation;
         });
         setSortedCampaigns(sorted);
-        setIsAscending(!isAscending); 
+        setIsAscending(!isAscending);
     };
 
     return (
-        <div className="max-w-5xl mx-auto py-5">
+        <div className="max-w-6xl mx-auto pt-28 pb-8 px-5 min-h-screen">
             <Helmet>
                 <title>All-Campaigns | Crowd-Cube</title>
             </Helmet>
@@ -47,46 +47,37 @@ const AllCampaign = () => {
                 </button>
             </div>
 
-            {/* Campaign Table */}
-            <div className="overflow-x-auto rounded-lg">
-                <table className="table-auto w-full border-collapse border border-gray-300">
-                    <thead>
-                        <tr className="bg-gray-200">
-                            <th className="border border-gray-300 px-4 py-2">Image</th>
-                            <th className="border border-gray-300 px-4 py-2">Title</th>
-                            <th className="border border-gray-300 px-4 py-2">Type</th>
-                            <th className="border border-gray-300 px-4 py-2">Min Donation</th>
-                            <th className="border border-gray-300 px-4 py-2">Deadline</th>
-                            <th className="border border-gray-300 px-4 py-2">Founder</th>
-                            <th className="border border-gray-300 px-4 py-2">Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {sortedCampaigns.map((campaign) => (
-                            <tr key={campaign._id} className="hover:bg-base-100">
-                                <td className="border border-gray-300 px-4 py-2">
-                                    <img
-                                        src={campaign.image}
-                                        alt={campaign.title}
-                                        className="w-20 h-20 object-cover rounded-lg"
-                                    />
-                                </td>
-                                <td className="border border-gray-300 px-4 py-2">{campaign.title}</td>
-                                <td className="border border-gray-300 px-4 py-2">{campaign.campaignType}</td>
-                                <td className="border border-gray-300 px-4 py-2">${campaign.minDonation}</td>
-                                <td className="border border-gray-300 px-4 py-2">{campaign.deadline}</td>
-                                <td className="border border-gray-300 px-4 py-2">{campaign.userName}</td>
-                                <td className="border border-gray-300 px-4 py-2 text-center">
-                                    <Link to={`/campaign-details/${campaign._id}`}>
-                                        <button className="btn bg-teal-600 text-base-100 px-4 py-2 rounded-md shadow-sm hover:bg-teal-700 transition">
-                                            See More
-                                        </button>
-                                    </Link>
-                                </td>
-                            </tr>
-                        ))}
-                    </tbody>
-                </table>
+            {/* Campaigns card */}
+            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                {sortedCampaigns.map((campaign) => (
+                    <div
+                        key={campaign._id}
+                        className="card bg-base-100 shadow-lg rounded-lg p-4 transition-transform transform hover:scale-105"
+                    >
+                        <div>
+                            <img
+                                src={campaign.image}
+                                alt={campaign.title}
+                                className="w-full h-32 object-cover rounded-lg mb-4"
+                            />
+                        </div>
+                        <div className='flex flex-col flex-grow justify-between gap-1'>
+                            <h3 className="text-xl font-semibold">{campaign.title}</h3>
+                            <p className="text-gray-400">
+                                {campaign.campaignType}
+                            </p>
+                            <p className="text-gray-500">
+                                Deadline: {campaign.deadline}
+                            </p>
+                            <Link to={`/campaign-details/${campaign._id}`}>
+                                <button className="btn bg-teal-600 text-base-100 hover:bg-teal-800 w-full mt-4">
+                                    See more
+                                </button>
+                            </Link>
+                        </div>
+
+                    </div>
+                ))}
             </div>
         </div>
     );

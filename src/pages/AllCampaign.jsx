@@ -43,7 +43,7 @@ const AllCampaign = () => {
                     onClick={handleSort}
                     className="btn bg-teal-600 text-base-100 px-6 py-2 rounded-md shadow-sm hover:bg-teal-700 transition"
                 >
-                    Sort by {isAscending ? "(Ascending)" : "(Descending)"}
+                    Sort by Donation Amount {isAscending ? "(Ascending)" : "(Descending)"}
                 </button>
             </div>
 
@@ -68,6 +68,9 @@ const AllCampaign = () => {
                             </p>
                             <p className="text-gray-500">
                                 Deadline: {campaign.deadline}
+                            </p>
+                            <p className="text-gray-400">
+                                Minimum donation: ${campaign.minDonation}
                             </p>
                             <Link to={`/campaign-details/${campaign._id}`}>
                                 <button className="btn bg-teal-600 text-base-100 hover:bg-teal-800 w-full mt-4">

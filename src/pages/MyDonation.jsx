@@ -35,8 +35,8 @@ const MyDonation = () => {
                     {userDonations.map((donation) => (
                         <div key={donation._id} className="border p-5 space-y-3 rounded-lg shadow-xl bg-base-100 mb-5 transition-transform transform hover:scale-105">
                             <h3 className="text-2xl font-bold text-teal-600">{donation.title}</h3>
-                            <h3><strong>Campaign Owner Name: </strong> {donation.OwnerName || "N/A"}</h3>
-                            <h3><strong>Campaign Owner Email: </strong> 
+                            <h3><strong>Founder Name: </strong> {donation.OwnerName || "N/A"}</h3>
+                            <h3><strong>Founder Email: </strong> 
                             <a className='text-blue-500' href={`mailto:${donation.OwnerMail}`} rel="noopener noreferrer">{donation.OwnerMail || "N/A"}</a></h3>
                             <p className="text-gray-400"><strong>Amount Donated:</strong> ${donation.amount}</p>
                         </div>

@@ -106,7 +106,7 @@ const CampaignDetails = () => {
                         <strong>Founder Name:</strong> {campaign.userName}
                     </p>
                     <p>
-                        <strong>Founder Email:</strong> {campaign.userEmail}
+                        <strong>Founder Email:</strong> <a className='text-blue-500' href={`mailto:${campaign.userEmail}`} rel="noopener noreferrer">{campaign.userEmail}</a>
                     </p>
 
                     {/* Display message if deadline has passed */}

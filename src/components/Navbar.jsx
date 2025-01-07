@@ -17,7 +17,7 @@ const Navbar = () => {
     setTimeout(() => {
       const target = document.querySelector(hash);
       if (target) {
-        target.scrollIntoView({ behavior: "smooth", block: "start", block: "center", inline: "nearest" });
+        target.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
       }
     }, 100);
   }

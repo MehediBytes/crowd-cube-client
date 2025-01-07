@@ -6,7 +6,6 @@ import { Helmet } from 'react-helmet-async';
 
 const CampaignDetails = () => {
     const campaign = useLoaderData();
-    console.log(campaign);
     const { user } = useContext(AuthContext);
     const navigate = useNavigate();
     const [donationAmount, setDonationAmount] = useState('');

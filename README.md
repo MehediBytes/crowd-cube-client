@@ -39,26 +39,51 @@ Crowdcube is your ultimate crowdfunding platform, bridging dreamers and doers. W
 - **MongoDB Atlas**: Flexible database for storing campaigns and user data.  
 - **Vercel**: Reliable backend hosting.
 
-#### **Key Dependencies**  
-```json
-"dependencies": {
-  "@emailjs/browser": "^4.4.1",
-  "@emotion/react": "^11.13.5",
-  "firebase": "^11.0.2",
-  "react": "^18.3.1",
-  "react-router-dom": "^7.0.2",
-  "react-toastify": "^10.0.6",
-  "react-tooltip": "^5.28.0",
-  "slick-carousel": "^1.8.1"
-}
-```
+## 📦 Dependencies  
+- **@emailjs/browser**: `^4.4.1`  
+- **@emotion/react**: `^11.13.5`  
+- **emailjs-com**: `^3.2.0`  
+- **firebase**: `^11.0.2`  
+- **localforage**: `^1.10.0`  
+- **lottie-react**: `^2.4.0`  
+- **match-sorter**: `^8.0.0`  
+- **react**: `^18.3.1`  
+- **react-awesome-reveal**: `^4.2.14`  
+- **react-dom**: `^18.3.1`  
+- **react-helmet-async**: `^2.0.5`  
+- **react-icons**: `^5.4.0`  
+- **react-router-dom**: `^7.0.2`  
+- **react-scroll**: `^1.9.0`  
+- **react-simple-typewriter**: `^5.0.1`  
+- **react-slick**: `^0.30.2`  
+- **react-toastify**: `^10.0.6`  
+- **react-tooltip**: `^5.28.0`  
+- **slick-carousel**: `^1.8.1`  
+- **sort-by**: `^1.2.0`  
+- **sweetalert2**: `^11.14.5`  
+
+### DevDependencies  
+- **@eslint/js**: `^9.15.0`  
+- **@types/react**: `^18.3.12`  
+- **@types/react-dom**: `^18.3.1`  
+- **@vitejs/plugin-react**: `^4.3.4`  
+- **autoprefixer**: `^10.4.20`  
+- **daisyui**: `^4.12.14`  
+- **eslint**: `^9.15.0`  
+- **eslint-plugin-react**: `^7.37.2`  
+- **eslint-plugin-react-hooks**: `^5.0.0`  
+- **eslint-plugin-react-refresh**: `^0.4.14`  
+- **globals**: `^15.12.0`  
+- **postcss**: `^8.4.49`  
+- **tailwindcss**: `^3.4.15`  
+- **vite**: `^6.0.1`
 
 ---
 
 ### 🖼️ Project Screenshot  
 
-![Crowdcube Screenshot]([https://via.placeholder.com/800x400.png?text=Crowdcube+App+Screenshot](https://i.ibb.co.com/ry0tP4d/crowd-cube-2.png))  
-![Crowdcube Screenshot]([https://via.placeholder.com/800x400.png?text=Crowdcube+App+Screenshot](https://i.ibb.co.com/3hXPTJS/crowd-cube-3.png)) 
+![Crowdcube Screenshot]((https://i.ibb.co.com/ry0tP4d/crowd-cube-2.png))  
+![Crowdcube Screenshot]((https://i.ibb.co.com/3hXPTJS/crowd-cube-3.png)) 
 
 ---
 

@@ -82,8 +82,8 @@ Crowdcube is your ultimate crowdfunding platform, bridging dreamers and doers. W
 
 ### 🖼️ Project Screenshot  
 
-![Crowdcube Screenshot]((https://i.ibb.co.com/ry0tP4d/crowd-cube-2.png))  
-![Crowdcube Screenshot]((https://i.ibb.co.com/3hXPTJS/crowd-cube-3.png)) 
+![Crowdcube Screenshot 1](https://i.ibb.co/ry0tP4d/crowd-cube-2.png)  
+![Crowdcube Screenshot 2](https://i.ibb.co/3hXPTJS/crowd-cube-3.png) 
 
 ---
 

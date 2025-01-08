@@ -91,8 +91,8 @@ Crowdcube is your ultimate crowdfunding platform, bridging dreamers and doers. W
 
 1. **Clone the Repository**:  
    ```bash
-   git clone https://github.com/your-username/crowdcube.git
-   cd crowdcube
+   git clone https://github.com/MehediBytes/crowd-cube-client.git
+   cd crowd-cube-client
    ```
 
 2. **Install Dependencies**:  
@@ -118,8 +118,7 @@ Crowdcube is your ultimate crowdfunding platform, bridging dreamers and doers. W
 
 - **Live Website**: [Crowdcube](https://crowd-cube-a10.web.app)  
 - **Backend APIs**:  
-  - [Campaigns API](https://crowd-cube-server.vercel.app/campaigns)  
-  - [Users API](https://crowd-cube-server.vercel.app/users)  
+  - [Campaigns API](https://crowd-cube-server.vercel.app/campaigns)
   - [Donations API](https://crowd-cube-server.vercel.app/donations)  
 
 ---

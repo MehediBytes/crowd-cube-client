@@ -36,4 +36,33 @@ Explore the live site: [Crowdcube](https://crowd-cube-a10.web.app)
 
 ### Backend   
 - **MongoDB Atlas**: A flexible and scalable database for storing project and user data.  
-- **Vercel**: Hosting for fast and reliable server-side functionality.  
+- **Vercel**: Hosting for fast and reliable server-side functionality.
+- **Campaign Management:**
+  - Create a new campaign.
+  - Retrieve all campaigns or a specific campaign by ID.
+  - Update or delete campaigns.
+  - [Campaigns API](https://crowd-cube-server.vercel.app/campaigns)
+
+- **User Management:**
+  - Register a new user.
+  - Retrieve all users.
+  - [Users API](https://crowd-cube-server.vercel.app/users)
+
+- **Donation Handling:**
+  - Submit a donation.
+  - Retrieve all donations.
+  - [Donations API](https://crowd-cube-server.vercel.app/donations)
+
+ ### Dependencies
+ - "@emailjs/browser": "^4.4.1"
+ - "@emotion/react": "^11.13.5"
+ - "emailjs-com": "^3.2.0"
+ - "firebase": "^11.0.2"
+ - "localforage": "^1.10.0"
+ - "lottie-react": "^2.4.0"
+ - "match-sorter": "^8.0.0"
+ - "react": "^18.3.1"
+ - "react-awesome-reveal": "^4.2.14"
+ - "react-dom": "^18.3.1"
+ - "react-helmet-async": "^2.0.5"
+ - "react-icons": "^5.4.0"

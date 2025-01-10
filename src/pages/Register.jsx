@@ -54,7 +54,7 @@ const Register = () => {
     };
 
     return (
-        <div className="pt-28 pb-8 px-5 min-h-screen">
+        <div className="pb-8 px-5 min-h-screen">
             <Helmet>
                 <title>Register | Crowd-Cube</title>
             </Helmet>

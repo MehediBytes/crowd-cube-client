@@ -68,8 +68,8 @@ const ContactUs = () => {
     return (
         <div id='contact-us' className="mb-8 p-5 rounded-xl">
             <div className='text-center pb-5'>
-                <h2 className="lg:text-3xl text-xl font-bold mb-5">Contact Us</h2>
-                <hr className="border-black w-1/3 mx-auto" />
+                <h2 className="lg:text-3xl text-xl font-bold mb-5 text-teal-600">Contact Us</h2>
+                <hr className="border-teal-600 w-1/3 mx-auto" />
             </div>
             <div className='md:flex md:justify-between md:flex-grow gap-5'>
                 <form onSubmit={sendEmail} className="space-y-4 md:w-full">

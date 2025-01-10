@@ -12,7 +12,7 @@ const Home = () => {
 
     const campaigns = useLoaderData();
     return (
-        <div className='max-w-6xl mx-auto min-h-screen'>
+        <div>
             <Helmet>
                 <title>Crowd-Cube</title>
             </Helmet>

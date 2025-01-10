@@ -18,7 +18,7 @@ const RunningCampaigns = ({ campaigns }) => {
 
     return (
         <div className="my-8 p-5">
-            <h2 className="text-3xl font-bold text-center mb-5">
+            <h2 className="text-3xl font-bold text-center mb-5 text-teal-600">
                 <Typewriter
                     words={['Running Campaigns']}
                     loop={false}
@@ -28,7 +28,7 @@ const RunningCampaigns = ({ campaigns }) => {
                     deleteSpeed={70}
                 />
             </h2>
-            <hr className="border-black w-1/3 mx-auto mb-5" />
+            <hr className="border-teal-600 w-1/3 mx-auto mb-5" />
 
             {/* Check if there are running campaigns */}
             {runningCampaigns.length === 0 ? (

@@ -43,7 +43,7 @@ const Banner = () => {
     ];
 
     return (
-        <div className="w-full pt-28 px-5">
+        <div className="w-full px-5">
             <Slider {...settings}>
                 {banners.map((banner, index) => (
                     <div key={index} className="relative">

@@ -4,8 +4,8 @@ const HowItWorks = () => {
     return (
         <section className="mb-8 p-5 rounded-xl">
             <div className="text-center">
-                <h2 className="lg:text-3xl text-xl font-bold mb-5">How It Works</h2>
-                <hr className="border-black w-1/3 mx-auto mb-5" />
+                <h2 className="lg:text-3xl text-xl font-bold mb-5 text-teal-600">How It Works</h2>
+                <hr className="border-teal-600 w-1/3 mx-auto mb-5" />
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                     {/* Step 1 */}
                     <div className="bg-base-100 p-6 rounded-lg shadow-lg flex justify-between flex-grow items-center flex-col gap-3 transition-transform transform hover:scale-105">

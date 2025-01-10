@@ -1,5 +1,5 @@
 import React, { useContext, useState, useEffect } from 'react';
-import { Link, Navigate, useLoaderData, useNavigate } from 'react-router-dom';
+import { useLoaderData, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../provider/AuthProvider';
 import { toast } from 'react-toastify';
 import { Helmet } from 'react-helmet-async';
@@ -74,11 +74,11 @@ const CampaignDetails = () => {
     };
 
     return (
-        <div className="max-w-6xl mx-auto pt-28 pb-8 px-5 min-h-screen">
+        <div className="pb-8 px-5 min-h-screen">
             <Helmet>
                 <title>Campaign-Details | Crowd-Cube</title>
             </Helmet>
-            <h2 className="text-3xl font-bold mb-5 md:text-center">{campaign.title}</h2>
+            <h2 className="text-3xl font-bold mb-5 md:text-center text-teal-600">{campaign.title}</h2>
             <div className='md:flex md:justify-between md:gap-5 md:flex-grow'>
                 <div className='md:w-1/2'>
                     <img

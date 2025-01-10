@@ -42,12 +42,12 @@ const AddCampaign = () => {
     };
 
     return (
-        <div className="max-w-6xl mx-auto pt-28 pb-8 px-5 min-h-screen">
+        <div className="pb-8 px-5 min-h-screen">
             <Helmet>
                 <title>Add-Campaign | Crowd-Cube</title>
             </Helmet>
             <div className="text-center space-y-2 mb-5">
-                <h1 className="lg:text-4xl md:text-3xl text-2xl font-bold">Add New Campaign</h1>
+                <h1 className="lg:text-4xl md:text-3xl text-2xl font-bold text-teal-600">Add New Campaign</h1>
                 <p className="">
                     Fill out the form below to add a new campaign.
                 </p>

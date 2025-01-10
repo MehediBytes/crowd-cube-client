@@ -60,7 +60,7 @@ const Login = () => {
     };
 
     return (
-        <div className="pb-8 px-5 min-h-screen">
+        <div className="pb-8 px-5">
             <Helmet>
                 <title>Login | Crowd-Cube</title>
             </Helmet>
